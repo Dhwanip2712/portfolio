@@ -972,3 +972,278 @@ footer .social-links a:hover {
         margin: 5px; /* Compact spacing */
     }
 }
+
+/* Modal Overlay */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* Centered Modal Content */
+.modal-content {
+    position: fixed; /* Keep modal content fixed in the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+    background-color: #fff;
+    padding: 20px;
+    width: 60%; /* Set width as desired */
+    max-width: 700px; /* Max width */
+    max-height: 80vh; /* Max height to prevent overflowing the screen */
+    overflow-y: auto; /* Enable scroll within the modal content */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+    display: flex; /* Center content */
+}
+
+/* Title Styling */
+#modal-body h2 {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Tools Section */
+#modal-body p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* Section Headings */
+#modal-body h3 {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+/* Text Content */
+#modal-body p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%; /* Adjust modal width on smaller screens */
+    }
+
+    #modal-body h2 {
+        font-size: 1.5rem;
+    }
+
+    #modal-body h3 {
+        font-size: 1.2rem;
+    }
+
+    #modal-body p,
+    #modal-tools {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%; /* Further adjust modal width */
+    }
+
+    #modal-body h2 {
+        font-size: 1.3rem;
+    }
+
+    #modal-body h3 {
+        font-size: 1rem;
+    }
+
+    #modal-body p,
+    #modal-tools {
+        font-size: 0.85rem;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Full-Screen Button */
+.full-screen-btn {
+    position: absolute;
+    top: 10px;
+    right: 50px; /* Positioned next to the close button */
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.full-screen-btn:hover {
+    color: #000;
+}
+
+/* Tools Section */
+.tools-section {
+    margin-top: 20px; /* Spacing above the tools section */
+}
+
+.tools-section h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Badge Styling for Tools */
+.tool-badge {
+    display: inline-block;
+    background-color: #f5f5f5; /* Light background */
+    color: #007bff; /* Accent color */
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 12px; /* Pill shape */
+    font-size: 0.9rem;
+    margin-right: 10px; /* Spacing between badges */
+    margin-bottom: 10px; /* Spacing if badges wrap to next line */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s;
+}
+
+.tool-badge:hover {
+    background-color: #007bff; /* Accent color on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .tools-section h3 {
+        font-size: 1rem;
+    }
+
+    .tool-badge {
+        font-size: 0.85rem;
+    }
+}
+
+/* Images within the Modal */
+.modal-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    
+}
+
+/* Images within the Modal */
+#modal-images {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Responsive Images */
+@media (max-width: 768px) {
+    #modal-images {
+        justify-content: center;
+    }
+    .modal-image {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-image {
+        max-width: 100%;
+    }
+}
+
+/* Links within the Modal */
+#modal-links {
+    margin-top: 15px;
+}
+
+#modal-links h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#modal-links ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#modal-links ul li {
+    margin-bottom: 8px;
+}
+
+#modal-links ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#modal-links ul li a:hover {
+    color: #0056b3;
+}
+
+.image-container {
+    text-align: center;        /* Center the content horizontally */
+    width: 100%;               /* Make sure the container takes full width */
+}
+
+.modal-image {
+    max-width: auto;          /* Ensure it doesn’t get too large */
+    height: auto;              /* Maintain the aspect ratio */
+    margin-bottom: 25px;
+}
