@@ -129,8 +129,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close modal when close button is clicked
     closeButton.addEventListener("click", function () {
-        modal.style.display = "none";
-        console.log("Modal closed via close button"); // Debug log
+        if (document.fullscreenElement) {
+            document.exitFullscreen().then(() => {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Reset body overflow
+            });
+        } else {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Reset body overflow
+        }
     });
 
     // Toggle full-screen mode
@@ -144,11 +151,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Close modal when clicking outside the modal content
-    window.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-            console.log("Modal closed by clicking outside content"); // Debug log
+    // Exit full-screen mode handling
+    document.addEventListener("fullscreenchange", () => {
+        if (!document.fullscreenElement && modal.style.display !== "none") {
+            // Ensure modal remains open after exiting full-screen using ESC
+            modal.style.display = "block";
         }
     });
 });
