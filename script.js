@@ -12,6 +12,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Project content data with detailed sections, images, and links
     const projects = {
+//CLIMATE ACTION---------------------------------------------------------------------------------------------------------------------        
+        "Carbon Footprint Data Visualisation System": {
+            title: "Development and Automation of a Comphrehensive Carbon Footprint Data Visualisation System",
+            tools: ["VBA", "Excel","DEFRA Conversion Factors","HESCET", "ESG"],
+            situation: "The University of Bath committed to reducing its carbon footprint and improving environmental sustainability as part of broader ESG objectives. The project sought to enhance the accuracy and transparency of Scope 3 emissions calculations, particularly related to supply chain activities and business travel. The existing manual process for emissions data handling was labor-intensive, prone to errors, and lacked the ability to support the university’s goals for sustainability reporting and regulatory compliance.",
+            task: "The task involved developing an integrated solution to automate the calculation of Scope 3 emissions, focusing on improving the reliability and efficiency of data management. The system needed to streamline emissions reporting processes, align with recognized ESG metrics, and provide a transparent overview of the university's carbon footprint, specifically targeting reductions in supply chain emissions and travel-related impacts.",
+            action: `
+            <ol>
+            <div class="image-container"><img src="images/carbon1.png" alt="CarbonFootprint" class="modal-image"></div>
+            <li><strong>Data Integration and Automation:</strong>
+                <ul>
+                    <li>Developed an automated tool using VBA and Excel to integrate diverse datasets, including supply chain, purchase card, and business travel information. The automated solution standardized data, reducing inconsistencies, and facilitated efficient data flow.</li>
+                    <li>This tool contributed to sustainable supply chain management by improving the transparency and accuracy of emissions calculations, enhancing the data integrity necessary for reliable sustainability reports.</li>
+                    <div class="image-container"><img src="images/carbon2.png" alt="CarbonFootprint" class="modal-image">
+                                                 <img src="images/carbon3.png" alt="CarbonFootprint" class="modal-image"></div>
+                </ul>
+            </li>
+
+            <li><strong>Emission Factor Mapping and Standardization:</strong>
+                <ul>
+                    <li>Leveraged DEFRA and HESCET conversion factors to calculate emissions from diverse data sources. This ensured the emissions were quantified following Environmental Impact Assessment (EIA) standards, aligning with recognized ESG metrics.</li>
+                    <li>Standardized emission factors enhanced the university's ability to conduct consistent carbon footprint reduction efforts, reinforcing the accountability and comparability of emissions over different years.</li>
+                    <div class="image-container"><img src="images/carbon4.png" alt="CarbonFootprint" class="modal-image">
+                                                 <img src="images/carbon5.png" alt="CarbonFootprint" class="modal-image">
+                                                 <img src="images/carbon6.png" alt="CarbonFootprint" class="modal-image"></div>
+                    </ul>
+            </li>   
+
+            <li><strong>Data Preprocessing for ESG Compliance:</strong>
+                <ul>
+                    <li>Implemented systematic data cleaning to manage missing values and validated data formats, ensuring compliance with regulatory standards for emissions reporting. This data standardization strengthened the accuracy and transparency of the university’s emissions reporting, a key tenet of effective ESG governance.</li>
+                    <li>These processes ensured data was prepared for ESG Risk Management, highlighting potential areas of concern and allowing the university to address carbon-related risks proactively.</li>
+                </ul>
+            </li>  
+            
+            <li><strong>Interactive Dashboard Development:</strong>
+                <ul>
+                    <li>Designed an interactive emissions dashboard in Tableau, allowing stakeholders to visualize emissions data, monitor KPIs, and assess trends across the university’s departments.</li>
+                    <li>The dashboard provided insights into categories of emissions that contributed most significantly to the carbon footprint, thus supporting initiatives like carbon footprint reduction and enabling data-driven decision-making to align with the Sustainable Development Goals (SDGs).</li>
+                </ul>
+            </li> 
+
+            <li><strong>Scalability and Flexibility for ESG Reporting:</strong>
+                <ul>
+                    <li>Designed the automated tool to be scalable and adaptable, supporting lifecycle assessments (LCA) of emissions for upcoming fiscal years. This scalability ensured that the university could continue to accurately track, analyze, and report emissions while adapting to changes in data sources.</li>
+                    <li>The flexibility of the tool supported ongoing renewable energy transition efforts by integrating emissions data from future renewable projects into the sustainability reports.</li>
+                </ul>
+            </li> 
+            </ol>
+            <div class="image-container"><img src="images/carbon7.png" alt="CarbonFootprint" class="modal-image">
+                                         <img src="images/carbon8.png" alt="CarbonFootprint" class="modal-image">
+                                         <img src="images/carbon9.png" alt="CarbonFootprint" class="modal-image">
+                                         <img src="images/carbon10.png" alt="CarbonFootprint" class="modal-image"></div>
+                    
+            `,
+            result:`
+            <p>The project resulted in an automated and scalable emissions calculation tool, complemented by an interactive dashboard featuring key sustainability KPIs. The automation of data integration reduced manual work and processing time significantly, allowing the university to focus on proactive emissions reductions and ESG performance improvements.</p>
+            <p>The dashboard enhanced the transparency of emissions reporting, enabled effective tracking towards sustainability goals, and provided stakeholders with a clear understanding of areas needing attention. This improved the university's ability to communicate sustainability efforts, thereby bolstering its ESG reporting framework and contributing to stakeholder engagement.</p.
+            `,
+            reflection:`
+             <p>This project reinforced the value of integrating sustainability initiatives with data automation to meet ESG targets effectively. The use of standardized emissions conversion factors supported regulatory compliance and enhanced the reliability of sustainability reporting. The visualization tools provided transparency, essential for informed decision-making aligned with sustainable development and carbon reduction initiatives. The project demonstrated how leveraging automation not only enhances operational efficiency but also ensures robust ESG compliance—an essential factor in aligning with international sustainability goals. This experience underscored the importance of embedding ESG principles into the operational and strategic aspects of sustainability reporting to foster resilience, transparency, and positive environmental impact.</p>        `
+        },
 //HR DASHBOARD---------------------------------------------------------------------------------------------------------------------        
         "HR Analytics Dashboard": {
             title: "HR Analytics Dashboard",
