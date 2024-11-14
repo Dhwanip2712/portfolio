@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             action: "SQL was used to clean, transform, and preprocess the raw HR dataset to ensure accuracy and consistency. Queries were used to handle missing values, derive key attributes, and structure the data for analysis. After preprocessing, Power BI was employed to develop an interactive HR Analytics Dashboard, displaying crucial metrics such as overall attrition rate, department-wise attrition, education field breakdown, and employee age distribution. The dashboard incorporated visual elements like bar charts, pie charts, and tables to convey insights clearly and effectively.",
             result: "An interactive dashboard was built with essential KPIs, providing actionable insights into the patterns and key contributors to employee attrition. The SQL-prepared data and Power BI visualizations allowed HR professionals to make informed decisions, potentially reducing attrition by targeting at-risk groups with retention initiatives.",
             reflection:`
-             This project emphasized the importance of data preprocessing and data accuracy in ensuring the reliability of insights. The combination of SQL and Power BI enabled the creation of a comprehensive solution that transformed complex data into clear, actionable visualizations for decision-makers. It underscored the value of using SQL to prepare and structure data efficiently before visualization to enhance the overall effectiveness of analysis.
+             "This project emphasized the importance of data preprocessing and data accuracy in ensuring the reliability of insights. The combination of SQL and Power BI enabled the creation of a comprehensive solution that transformed complex data into clear, actionable visualizations for decision-makers. It underscored the value of using SQL to prepare and structure data efficiently before visualization to enhance the overall effectiveness of analysis."
         <div class="image-container"><img src="images/dashboardhr.png" alt="HR Dashboard" class="modal-image"></div> 
         `
         },
@@ -412,6 +412,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Close modal when Escape key is pressed
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.style.display === "block") {
+            closeModal();
+        }
+    });
+
     // Toggle full-screen mode
     fullScreenButton.addEventListener("click", function () {
         if (!document.fullscreenElement) {
@@ -423,11 +430,47 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Close modal function to handle both close button and Escape key
+    function closeModal() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen().then(() => {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Reset body overflow
+            });
+        } else {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Reset body overflow
+        }
+    }
+
     // Exit full-screen mode handling
     document.addEventListener("fullscreenchange", () => {
         if (!document.fullscreenElement && modal.style.display !== "none") {
             // Ensure modal remains open after exiting full-screen using ESC
             modal.style.display = "block";
         }
+    });
+
+    // Scroll Highlighting Script for Navigation
+    const sections = document.querySelectorAll("section"); // Make sure these match your section IDs
+    const navLinks = document.querySelectorAll(".nav-link"); // Ensure nav links have this class
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(current)) {
+                link.classList.add("active");
+            }
+        });
     });
 });
